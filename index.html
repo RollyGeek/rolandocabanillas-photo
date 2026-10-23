@@ -1,0 +1,933 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="dark" />
+<meta name="description" content="Rolando Cabanillas — freelance photographer & videographer in South Florida. Fashion & runway shows, quinceañeras, model portfolios, weddings and portraits. Let me capture those special moments for you!" />
+<link rel="icon" href="data:," />
+<title>Rolando Cabanillas – Photo/Video Creator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0b0a08;
+    --bg-2:#12100c;
+    --panel:#171410;
+    --line:rgba(201,162,75,.28);
+    --line-soft:rgba(255,255,255,.08);
+    --gold:#c9a24b;
+    --gold-bright:#e6c87a;
+    --ink:#f3ecdc;
+    --ink-dim:#b9b0a0;
+    --ink-faint:#8a8172;
+    --serif:"Cormorant Garamond", Georgia, serif;
+    --sans:"Jost", "Helvetica Neue", Arial, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  ::selection{background:var(--gold);color:#111}
+
+  /* ---------- Nav ---------- */
+  .nav{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem clamp(1rem,4vw,3rem);background:linear-gradient(180deg,rgba(5,4,3,.88),rgba(5,4,3,.55) 70%,transparent);backdrop-filter:blur(6px)}
+  .brand{text-decoration:none;line-height:1.05}
+  .brand .bname{font-family:var(--serif);font-size:1.45rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+  .brand .bname em{color:var(--gold);font-style:normal}
+  .brand .bsub{display:block;font-size:.58rem;letter-spacing:.42em;text-transform:uppercase;color:var(--ink-dim);margin-top:.2rem}
+  .nav-links{display:flex;align-items:center;gap:clamp(.9rem,2.4vw,2rem);list-style:none;margin:0;padding:0}
+  .nav-links a{text-decoration:none;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);padding:.3rem 0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
+  .nav-links a:hover{color:var(--gold-bright);border-color:var(--gold)}
+  .nav-links a.book{color:#141005;background:var(--gold);padding:.55rem 1.1rem;font-weight:500;border:none}
+  .nav-links a.book:hover{background:var(--gold-bright);color:#141005}
+  .burger{display:none;background:none;border:1px solid var(--line);color:var(--ink);width:42px;height:42px;font-size:1.15rem;cursor:pointer}
+  @media (max-width:900px){
+    .burger{display:block}
+    .nav-links{position:absolute;top:100%;right:0;left:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(8,7,5,.97);border-bottom:1px solid var(--line);padding:.5rem clamp(1rem,4vw,3rem) 1rem;display:none}
+    .nav-links.open{display:flex}
+    .nav-links li{border-top:1px solid var(--line-soft)}
+    .nav-links a{display:block;padding:.8rem 0}
+    .nav-links a.book{text-align:center;margin-top:.6rem}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr;padding-top:76px}
+  .hero-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(2rem,6vw,5.5rem);padding-right:clamp(1.2rem,3vw,2.5rem)}
+  .hero-rule{width:64px;height:1px;background:var(--gold);margin-bottom:1.6rem}
+  .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.9rem,6.2vw,5.2rem);line-height:.98;margin:0 0 .4rem;letter-spacing:.01em}
+  .hero h1 .gold{color:var(--gold);font-style:italic;font-weight:500}
+  .hero .role{font-size:.8rem;letter-spacing:.44em;text-transform:uppercase;color:var(--ink-dim);margin:.9rem 0 1.4rem}
+  .hero .tagline{font-family:var(--serif);font-style:italic;font-size:clamp(1.35rem,2.4vw,1.8rem);color:var(--gold-bright);margin:0 0 1.2rem;line-height:1.3}
+  .hero .lede{color:var(--ink-dim);max-width:34rem;margin:0 0 2.2rem;font-size:1.02rem}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:.9rem}
+  .btn{display:inline-block;text-decoration:none;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;padding:.95rem 1.7rem;border:1px solid var(--gold);transition:background .25s,color .25s;font-weight:400}
+  .btn.solid{background:var(--gold);color:#141005;font-weight:500}
+  .btn.solid:hover{background:var(--gold-bright)}
+  .btn.ghost{color:var(--ink)}
+  .btn.ghost:hover{background:rgba(201,162,75,.14);color:var(--gold-bright)}
+  .hero-stats{display:flex;gap:clamp(1.4rem,4vw,3rem);margin-top:3rem;padding-top:1.6rem;border-top:1px solid var(--line-soft);flex-wrap:wrap}
+  .stat .n{font-family:var(--serif);font-size:1.9rem;color:var(--gold-bright);line-height:1}
+  .stat .l{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint);margin-top:.35rem}
+  .hero-photo{position:relative;min-height:420px}
+  .hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,transparent 26%),linear-gradient(0deg,rgba(11,10,8,.55),transparent 34%)}
+  .hero-photo .credit{position:absolute;right:1rem;bottom:.8rem;z-index:2;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(243,236,220,.75)}
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;padding-top:64px}
+    .hero-photo{order:-1;min-height:52svh}
+    .hero-photo img{object-position:center 34%}
+    .hero-photo::after{background:linear-gradient(0deg,var(--bg) 2%,transparent 40%)}
+    .hero-copy{padding-top:1.6rem}
+  }
+
+  /* ---------- Sections ---------- */
+  section{padding:clamp(4rem,9vw,7.5rem) clamp(1rem,4vw,3rem)}
+  .wrap{max-width:1280px;margin:0 auto}
+  .sec-head{max-width:46rem;margin-bottom:clamp(2rem,5vw,3.4rem)}
+  .sec-head .no{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.05rem}
+  .sec-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.1rem,4.4vw,3.3rem);line-height:1.05;margin:.35rem 0 .8rem}
+  .sec-head p{color:var(--ink-dim);margin:0}
+  .gold-i{color:var(--gold);font-style:italic}
+
+  /* About */
+  .about{background:var(--bg-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+  .about-photo{position:relative}
+  .about-photo img{width:100%;aspect-ratio:1/1;object-fit:cover}
+  .about-photo::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--line);z-index:0}
+  .about-photo img{position:relative;z-index:1}
+  .about-portraits{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .about-photo .portrait-bw{object-position:top center}
+  @media (max-width:520px){.about-portraits{grid-template-columns:1fr}}
+  .about-photo .cap{position:relative;z-index:1;margin-top:1.4rem;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint)}
+  .about-copy h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 1rem;line-height:1.15}
+  .about-copy p{color:var(--ink-dim);margin:0 0 1.1rem}
+  .about-copy p strong{color:var(--ink);font-weight:500}
+  .sig{font-family:var(--serif);font-style:italic;font-size:1.7rem;color:var(--gold-bright);margin-top:1.6rem}
+  .about-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+  .fact{border-top:1px solid var(--line);padding-top:.8rem}
+  .fact .fv{font-family:var(--serif);font-size:1.35rem;color:var(--ink)}
+  .fact .fl{font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-faint)}
+  @media (max-width:820px){.about-grid{grid-template-columns:1fr}.about-facts{grid-template-columns:1fr 1fr 1fr}}
+  @media (max-width:520px){.about-facts{grid-template-columns:1fr}}
+
+  /* Services */
+  .svc-list{border-top:1px solid var(--line-soft)}
+  .svc{display:grid;grid-template-columns:64px 1fr 1.2fr auto;gap:clamp(1rem,3vw,2.4rem);align-items:baseline;padding:1.7rem .4rem;border-bottom:1px solid var(--line-soft);transition:background .25s}
+  .svc:hover{background:rgba(201,162,75,.05)}
+  .svc .num{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.2rem}
+  .svc h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.45rem,2.6vw,2rem);margin:0;line-height:1.1}
+  .svc p{color:var(--ink-dim);margin:0;font-size:.97rem}
+  .svc a{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-bright);text-decoration:none;white-space:nowrap;border-bottom:1px solid var(--line);padding-bottom:.2rem}
+  .svc a:hover{color:var(--gold)}
+  @media (max-width:820px){.svc{grid-template-columns:44px 1fr;grid-template-rows:auto auto}.svc p{grid-column:2}.svc a{grid-column:2;justify-self:start}}
+
+  /* Portfolio */
+  .portfolio{background:var(--bg-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .filters{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:2rem}
+  .filters button{font-family:var(--sans);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;background:transparent;color:var(--ink-dim);border:1px solid var(--line-soft);padding:.6rem 1.15rem;cursor:pointer;transition:all .25s}
+  .filters button:hover{border-color:var(--gold);color:var(--gold-bright)}
+  .filters button.active{background:var(--gold);border-color:var(--gold);color:#141005;font-weight:500}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;grid-auto-flow:dense}
+  .gitem{position:relative;overflow:hidden;cursor:pointer;border:none;padding:0;background:var(--panel);text-align:left}
+  /* While a photo is on its way in, the cell shows a warm loading tone with a
+     slow sweep — "loading" must never read as "broken" (a solid black box). */
+  .gitem::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(110deg,#251c0f 32%,#51401d 50%,#251c0f 68%);background-size:220% 100%;animation:cellwait 1.7s ease-in-out infinite}
+  @keyframes cellwait{0%{background-position:130% 0}100%{background-position:-130% 0}}
+  @media (prefers-reduced-motion:reduce){.gitem::before{animation:none}}
+  .gitem img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;opacity:0;transition:transform .6s ease,opacity .5s ease}
+  .gitem img.loaded{opacity:1}
+  .gitem:hover img{transform:scale(1.045)}
+  .gitem .meta{position:absolute;z-index:2;inset:auto 0 0 0;padding:2rem .95rem .8rem;background:linear-gradient(0deg,rgba(0,0,0,.78),transparent);color:var(--ink);opacity:0;transition:opacity .3s}
+  .gitem:hover .meta,.gitem:focus-visible .meta{opacity:1}
+  .gitem .meta .t{font-family:var(--serif);font-size:1.15rem;line-height:1.1;display:block}
+  .gitem .meta .c{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-bright)}
+  .gitem.tall{grid-row:span 2;aspect-ratio:auto}
+  .gitem{aspect-ratio:4/5}
+  .gitem.wide{grid-column:span 2;aspect-ratio:8/5}
+  .gitem.hidden{display:none}
+  @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.gitem.wide{grid-column:span 2}}
+  @media (max-width:520px){.grid{grid-template-columns:1fr 1fr;gap:.55rem}.gitem .meta{opacity:1;padding-top:1.2rem}}
+
+  /* Archive */
+  .archive{border-bottom:1px solid var(--line-soft)}
+  .archive-toggle{cursor:pointer;font-family:var(--sans);background:transparent;color:var(--ink)}
+  .archive-body{margin-top:2.2rem}
+
+  /* Quince feature */
+  .quince{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0}
+  .quince-photo{min-height:520px;position:relative}
+  .quince-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%}
+  .quince-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(2.4rem,6vw,5.5rem);background:var(--panel)}
+  .quince-copy h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4vw,3.1rem);line-height:1.05;margin:.4rem 0 1rem}
+  .quince-copy p{color:var(--ink-dim);margin:0 0 1.1rem}
+  .quince-list{list-style:none;margin:.4rem 0 2rem;padding:0}
+  .quince-list li{padding:.55rem 0;border-bottom:1px solid var(--line-soft);color:var(--ink);font-size:.98rem;display:flex;gap:.8rem;align-items:baseline}
+  .quince-list li::before{content:"—";color:var(--gold)}
+  @media (max-width:820px){.quince{grid-template-columns:1fr}.quince-photo{min-height:60svh}}
+
+  /* Testimonial */
+  .testimonial{background:var(--bg);border-top:1px solid var(--line-soft)}
+  .testimonial-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+  .testimonial-copy p{color:var(--ink-dim);margin:0 0 1.1rem;max-width:32rem}
+  .testimonial-meta{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin:1.6rem 0 2rem;padding-top:1.2rem;border-top:1px solid var(--line-soft)}
+  .testimonial-meta span{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-faint)}
+  .testimonial-meta span strong{color:var(--gold-bright);font-weight:500}
+  .testimonial-video{display:flex;flex-direction:column;align-items:center}
+  .video-frame{position:relative;width:min(380px,100%)}
+  .video-frame::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--line);z-index:0}
+  .video-frame video{position:relative;z-index:1;display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#000;border:1px solid var(--line-soft)}
+  .video-cap{margin:1.5rem 0 0;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint);text-align:center}
+  /* Videos */
+  .videos{background:var(--bg)}
+  .videos-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(2rem,5vw,4rem);justify-items:center;max-width:860px;margin:0 auto}
+  .videos-item{display:flex;flex-direction:column;align-items:center}
+  @media (max-width:820px){
+    .videos-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:820px){
+    .testimonial-grid{grid-template-columns:1fr}
+    .testimonial-copy p{max-width:none}
+    .video-frame{width:min(360px,88vw)}
+    .video-frame::before{inset:10px -10px -10px 10px}
+  }
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+  .contact-big{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.05;margin:.4rem 0 1.2rem}
+  .contact-cards{display:grid;gap:.8rem;margin-top:2rem}
+  .ccard{display:flex;align-items:center;gap:1.1rem;border:1px solid var(--line-soft);padding:1.05rem 1.2rem;text-decoration:none;transition:border-color .25s,background .25s}
+  .ccard:hover{border-color:var(--gold);background:rgba(201,162,75,.05)}
+  .ccard .ic{flex:none;width:42px;height:42px;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold)}
+  .ccard .ic svg{width:19px;height:19px}
+  .ccard .cl{font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint)}
+  .ccard .cv{font-size:1.06rem;color:var(--ink);font-weight:400;word-break:break-word}
+  form.book{border:1px solid var(--line-soft);background:var(--bg-2);padding:clamp(1.4rem,3vw,2.2rem)}
+  form.book h3{font-family:var(--serif);font-weight:500;font-size:1.65rem;margin:0 0 .4rem}
+  form.book .sub{color:var(--ink-dim);font-size:.94rem;margin:0 0 1.4rem}
+  .field{margin-bottom:1rem}
+  .field label{display:block;font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.4rem}
+  .field input,.field select,.field textarea{width:100%;background:#0d0b09;border:1px solid var(--line-soft);color:var(--ink);font-family:var(--sans);font-size:1rem;padding:.75rem .85rem;border-radius:0;appearance:none}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:1px solid var(--gold);border-color:var(--gold)}
+  .field textarea{resize:vertical;min-height:96px}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  @media (max-width:520px){.frow{grid-template-columns:1fr}}
+  form.book .btn{width:100%;text-align:center;cursor:pointer;font-family:var(--sans)}
+  .form-note{font-size:.82rem;color:var(--ink-faint);margin-top:.9rem;text-align:center}
+  @media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
+
+  /* Follow my work — Instagram accounts */
+  .follow{margin-top:clamp(3rem,6vw,4.5rem);border-top:1px solid var(--line-soft);padding-top:clamp(2rem,4vw,3rem)}
+  .follow h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.7rem,3.4vw,2.4rem);margin:0 0 .5rem}
+  .follow .fsub{color:var(--ink-dim);margin:0 0 1.8rem;max-width:40rem}
+  .follow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
+  .fcard{display:block;border:1px solid var(--line-soft);padding:1.3rem 1.2rem;text-decoration:none;transition:border-color .25s,background .25s}
+  .fcard:hover{border-color:var(--gold);background:rgba(201,162,75,.05)}
+  .fcard .fic{width:40px;height:40px;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold);margin-bottom:.9rem}
+  .fcard .fic svg{width:18px;height:18px}
+  .fcard .fh{font-size:1.08rem;font-weight:500;color:var(--ink);word-break:break-word}
+  .fcard .fl2{display:block;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-bright);margin:.35rem 0 .45rem}
+  .fcard .fd{display:block;color:var(--ink-dim);font-size:.92rem;line-height:1.5}
+  @media (max-width:900px){.follow-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:460px){.follow-grid{grid-template-columns:1fr}}
+
+  footer{border-top:1px solid var(--line);padding:2.6rem clamp(1rem,4vw,3rem);display:flex;flex-wrap:wrap;gap:1.4rem;align-items:center;justify-content:space-between;background:#080706}
+  footer .fbrand{font-family:var(--serif);font-size:1.25rem;letter-spacing:.12em;text-transform:uppercase}
+  footer .fbrand em{color:var(--gold);font-style:normal}
+  footer nav{display:flex;gap:1.4rem;flex-wrap:wrap}
+  footer nav a{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-dim);text-decoration:none}
+  footer nav a:hover{color:var(--gold-bright)}
+  footer .fine{width:100%;font-size:.8rem;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;border-top:1px solid var(--line-soft);padding-top:1.2rem}
+
+  /* Lightbox */
+  .lb{position:fixed;inset:0;z-index:100;background:rgba(4,3,2,.96);display:none;flex-direction:column;align-items:center;justify-content:center;padding:1rem}
+  .lb.open{display:flex}
+  .lb img{max-width:min(1100px,94vw);max-height:78svh;object-fit:contain;border:1px solid var(--line-soft)}
+  .lb .lb-cap{margin-top:1rem;text-align:center}
+  .lb .lb-cap .t{font-family:var(--serif);font-size:1.35rem}
+  .lb .lb-cap .c{font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-bright)}
+  .lb button{position:absolute;background:rgba(10,9,7,.7);border:1px solid var(--line);color:var(--ink);width:46px;height:46px;font-size:1.2rem;cursor:pointer}
+  .lb button:hover{color:var(--gold-bright);border-color:var(--gold)}
+  .lb .close{top:1rem;right:1rem}
+  .lb .prev{left:1rem;top:50%;transform:translateY(-50%)}
+  .lb .next{right:1rem;top:50%;transform:translateY(-50%)}
+  .lb .count{position:absolute;top:1rem;left:1rem;font-size:.72rem;letter-spacing:.3em;color:var(--ink);background:rgba(10,9,7,.7);border:1px solid var(--line);padding:.65rem .8rem}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    .gitem img{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#home">
+    <span class="bname">Rolando <em>Cabanillas</em></span>
+    <span class="bsub">Photography &amp; Video · South Florida</span>
+  </a>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About me</a></li>
+    <li><a href="#portfolio" data-filter-link="women">Women</a></li>
+    <li><a href="#portfolio" data-filter-link="men">Men</a></li>
+    <li><a href="#portfolio" data-filter-link="weddings">Weddings</a></li>
+    <li><a href="#portfolio" data-filter-link="events">Events</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contacts</a></li>
+    <li><a href="#contact" class="book">Book Now</a></li>
+  </ul>
+</header>
+
+<!-- ================= HOME / HERO ================= -->
+<section class="hero" id="home" style="padding:0">
+  <div class="hero-copy">
+    <div class="hero-rule"></div>
+    <h1>Rolando<br /><span class="gold">Cabanillas</span></h1>
+    <p class="role">Photo / Video Creator</p>
+    <p class="tagline">“Let me capture those special moments for you!”</p>
+    <p class="lede">Freelance photographer and videographer from South Florida — serving clients in town and traveling wherever the story takes me, doing what I love to do.</p>
+    <div class="hero-ctas">
+      <a class="btn solid" href="#contact">Book Your Date</a>
+      <a class="btn ghost" href="#portfolio">View Portfolio</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="n">15+</div><div class="l">Years behind the lens</div></div>
+      <div class="stat"><div class="n">Photo + Video</div><div class="l">Stills &amp; motion</div></div>
+      <div class="stat"><div class="n">South Florida</div><div class="l">Miami · Available to travel</div></div>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="assets/gallery/quince-blue.jpg" alt="Quinceañera in a sparkling blue gown and crown, photographed by Rolando Cabanillas" loading="eager" decoding="async" fetchpriority="high" />
+    <span class="credit">Quinceañera · Rolando Cabanillas Photography &amp; Video</span>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo reveal">
+      <div class="about-portraits">
+        <img src="assets/rolly-camera.jpg" alt="Rolando Cabanillas holding his Nikon camera" />
+        <img class="portrait-bw" src="assets/rolly-portrait-suit.jpg" alt="Black-and-white portrait of Rolando Cabanillas in a three-piece suit and tie" />
+      </div>
+      <p class="cap">Rolando “Rolly” Cabanillas — Photographer &amp; Videographer</p>
+    </div>
+    <div class="about-copy reveal">
+      <div class="sec-head" style="margin-bottom:1.2rem">
+        <span class="no">About me</span>
+        <h2>Welcome to my world of <span class="gold-i">photography</span></h2>
+      </div>
+      <h3>A passion turned profession</h3>
+      <p>Photography started as a hobby — albeit an expensive one — but I quickly became hooked. Over the past <strong>15 years</strong>, I’ve dedicated myself to learning and perfecting techniques to freeze emotions and stories in every frame.</p>
+      <p>What began as a personal journey has evolved into my profession. But for me, photography isn’t just a way to make a living — it’s about creating joy. Seeing the excitement and smiles from my clients when they see their photos makes every session worthwhile.</p>
+      <p>I’m originally from <strong>Peru</strong> and have been living in <strong>South Florida since 2000</strong>. My professional background is in systems engineering, but I found my passion in photography — a world that lets us capture life’s most meaningful moments and relive them every time we revisit an image.</p>
+      <p>I specialize in capturing authentic moments, whether it’s for a special event or a personal portrait session. With a blend of creativity and attention to detail, I strive to make every photograph reflect your unique story.</p>
+      <div class="about-facts">
+        <div class="fact"><div class="fv">Since 2000</div><div class="fl">Based in South Florida</div></div>
+        <div class="fact"><div class="fv">15+ years</div><div class="fl">Photography experience</div></div>
+        <div class="fact"><div class="fv">EN · ES</div><div class="fl">English &amp; Spanish</div></div>
+      </div>
+      <p class="sig">— Rolando Cabanillas</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="no">Services</span>
+      <h2>What I <span class="gold-i">shoot</span></h2>
+      <p>From the end of a runway to the first dance — photo and video coverage built around your moment, your story, your style.</p>
+    </div>
+    <div class="svc-list reveal">
+      <div class="svc">
+        <span class="num">01</span>
+        <h3>Fashion &amp; Runway Shows</h3>
+        <p>Runway coverage for designers, models and producers — full walks, detail shots and backstage moments, plus vertical reels ready to post.</p>
+        <a href="#contact">Book coverage</a>
+      </div>
+      <div class="svc">
+        <span class="num">02</span>
+        <h3>Quinceañeras</h3>
+        <p>The dress, the crown, the waltz, the party — complete photo and video coverage of her once-in-a-lifetime celebration, from portraits to the last dance.</p>
+        <a href="#contact">Reserve your date</a>
+      </div>
+      <div class="svc">
+        <span class="num">03</span>
+        <h3>Model Portfolios</h3>
+        <p>Portfolio sessions that get models booked — editorial looks, digitals and comp-card-ready images shot in studio and on location around Miami.</p>
+        <a href="#contact">Start your portfolio</a>
+      </div>
+      <div class="svc">
+        <span class="num">04</span>
+        <h3>Weddings</h3>
+        <p>Honest, emotional wedding photography and film — the glances, the tears and the celebration, captured as it truly happened.</p>
+        <a href="#contact">Check your date</a>
+      </div>
+      <div class="svc">
+        <span class="num">05</span>
+        <h3>Portraits — Women &amp; Men</h3>
+        <p>Personal portrait sessions with direction that puts you at ease — beauty, editorial and lifestyle portraits that reflect who you are.</p>
+        <a href="#contact">Book a session</a>
+      </div>
+      <div class="svc">
+        <span class="num">06</span>
+        <h3>Children &amp; Family</h3>
+        <p>Milestones, birthdays and family sessions — patient, joyful photography of the moments that pass by fastest.</p>
+        <a href="#contact">Plan your session</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PORTFOLIO ================= -->
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="no">Portfolio</span>
+      <h2>Selected <span class="gold-i">work</span></h2>
+      <p>The short list — fifty-nine photographs: the strongest frames from the runway, the quinceañeras, the weddings and the parties. Filter by gallery, tap any photo to view it full-screen — and if you want everything, the complete collection of 204 lives in the archive right below.</p>
+    </div>
+    <div class="filters reveal" id="showcaseFilters" role="group" aria-label="Filter portfolio">
+      <button type="button" class="active" data-filter="all">All</button>
+      <button type="button" data-filter="women">Women</button>
+      <button type="button" data-filter="men">Men</button>
+      <button type="button" data-filter="weddings">Weddings</button>
+      <button type="button" data-filter="fashion">Fashion &amp; Runway</button>
+      <button type="button" data-filter="quince">Children &amp; Quinceañeras</button>
+      <button type="button" data-filter="events">Events &amp; Parties</button>
+    </div>
+    <div class="grid" id="grid">
+      <button type="button" class="gitem tall" data-cat="quince" data-title="Quinceañera in Blue" data-caption="Quinceañeras">
+        <img src="assets/gallery/quince-blue.jpg" alt="Quinceañera in a sparkling blue ball gown and silver crown smiling at the camera" loading="eager" decoding="async" />
+        <span class="meta"><span class="c">Quinceañeras</span><span class="t">Quinceañera in Blue</span></span>
+      </button>
+      <button type="button" class="gitem tall" data-cat="women" data-title="Scarlet" data-caption="Women — Portraits">
+        <img src="assets/gallery/women-red.jpg" alt="Portrait of a woman in a red dress" loading="eager" decoding="async" />
+        <span class="meta"><span class="c">Women</span><span class="t">Scarlet</span></span>
+      </button>
+      <button type="button" class="gitem wide" data-cat="weddings" data-title="The Bench" data-caption="Weddings">
+        <img src="assets/gallery/wedding-bench.jpg" alt="Bride in a white gown and groom in a tuxedo holding hands on a park bench" loading="eager" decoding="async" />
+        <span class="meta"><span class="c">Weddings</span><span class="t">The Bench</span></span>
+      </button>
+      <button type="button" class="gitem tall" data-cat="weddings" data-title="She Said Yes" data-caption="Weddings — Engagements">
+        <img src="assets/gallery/wedding-proposal.jpg" alt="Man on one knee placing a ring on his partner's hand beside a lake" loading="eager" decoding="async" />
+        <span class="meta"><span class="c">Weddings</span><span class="t">She Said Yes</span></span>
+      </button>
+      <button type="button" class="gitem wide" data-cat="weddings" data-title="A &amp; J" data-caption="Weddings — Engagements">
+        <img src="assets/gallery/wedding-letters.jpg" alt="Engaged couple holding wooden letters A and J outdoors" loading="eager" decoding="async" />
+        <span class="meta"><span class="c">Weddings</span><span class="t">A &amp; J</span></span>
+      </button>
+      <button type="button" class="gitem wide" data-cat="women" data-title="The Gathering" data-caption="Women — Events">
+        <img src="assets/gallery/women-event.jpg" alt="Group of women gathered at a boutique event" loading="eager" decoding="async" />
+        <span class="meta"><span class="c">Women</span><span class="t">The Gathering</span></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FULL ARCHIVE ================= -->
+<section class="archive" id="archive">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="no">Archivo completo</span>
+      <h2>The full <span class="gold-i">archive</span></h2>
+      <p>Every photograph in the collection — all 204: complete wedding stories, quinceañeras, fashion-week showcases, portrait sessions, and events &amp; parties across Miami. Nothing held back.</p>
+    </div>
+    <button type="button" class="btn ghost archive-toggle" id="archiveToggle" aria-expanded="false" aria-controls="archiveBody">View the full archive — 204 photos</button>
+    <div class="archive-body" id="archiveBody" hidden>
+      <div class="filters" id="archiveFilters" role="group" aria-label="Filter the full archive">
+        <button type="button" class="active" data-filter="all">All</button>
+        <button type="button" data-filter="women">Women</button>
+        <button type="button" data-filter="men">Men</button>
+        <button type="button" data-filter="weddings">Weddings</button>
+        <button type="button" data-filter="fashion">Fashion &amp; Runway</button>
+        <button type="button" data-filter="quince">Children &amp; Quinceañeras</button>
+        <button type="button" data-filter="events">Events &amp; Parties</button>
+      </div>
+      <div class="grid" id="archiveGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VIDEOS ================= -->
+<section class="videos" id="videos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="no">Videos</span>
+      <h2>On the <span class="gold-i">Runway</span></h2>
+      <p>Pageant runway coverage, filmed live — the titleholders of Miss Mundo Internacional and Miss Teen Global, captured as they walked.</p>
+    </div>
+    <div class="videos-grid reveal">
+      <div class="videos-item">
+        <div class="video-frame">
+          <video controls preload="metadata" playsinline poster="assets/studio-gold-bts-poster.jpg" aria-label="Runway coverage video of the Miss Mundo Internacional titleholder walking the pageant runway, filmed by Rolando Cabanillas">
+            <source src="assets/studio-gold-bts.mp4" type="video/mp4" />
+            Your browser does not support embedded video. <a href="assets/studio-gold-bts.mp4">Watch the Miss Mundo Internacional runway video</a>.
+          </video>
+        </div>
+        <p class="video-cap">Runway coverage &mdash; Miss Mundo Internacional</p>
+      </div>
+      <div class="videos-item">
+        <div class="video-frame">
+          <video controls preload="metadata" playsinline poster="assets/miss-teen-global-runway-poster.jpg" aria-label="Runway coverage video of the Miss Teen Global titleholder walking the pageant runway, filmed by Rolando Cabanillas">
+            <source src="assets/miss-teen-global-runway.mp4" type="video/mp4" />
+            Your browser does not support embedded video. <a href="assets/miss-teen-global-runway.mp4">Watch the Miss Teen Global runway video</a>.
+          </video>
+        </div>
+        <p class="video-cap">Runway coverage &mdash; Miss Teen Global</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUINCE FEATURE ================= -->
+<section class="quince" id="quince">
+  <div class="quince-photo">
+    <img src="assets/gallery/quince-blue.jpg" alt="Quinceañera in a sparkling blue gown with floral appliqué and a silver crown" />
+  </div>
+  <div class="quince-copy reveal">
+    <span class="no" style="font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.05rem">Signature celebration</span>
+    <h2>Quinceañeras, captured like <span class="gold-i">royalty</span></h2>
+    <p>Fifteen years in the making, one night to remember. I cover the full celebration — the portraits in the gown, the court, the waltz and the party — in photos and video she’ll treasure for the rest of her life.</p>
+    <ul class="quince-list">
+      <li>Pre-event portrait session in the gown</li>
+      <li>Full ceremony &amp; reception coverage</li>
+      <li>Photo + video packages available</li>
+      <li>South Florida venues · travel available</li>
+    </ul>
+    <div><a class="btn solid" href="#contact">Reserve Her Date</a></div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIAL ================= -->
+<section class="testimonial" id="testimonial">
+  <div class="wrap testimonial-grid">
+    <div class="testimonial-copy reveal">
+      <div class="sec-head" style="margin-bottom:1.2rem">
+        <span class="no">Testimonial</span>
+        <h2>What Clients <span class="gold-i">Say</span></h2>
+        <p>Lyah shares her experience after her session.</p>
+      </div>
+      <p>Filmed on camera in the dressing room right after her session, Lyah answers the photographer&rsquo;s question about how her session went &mdash; in her own words. The video closes with her hero photo from the shoot.</p>
+      <p>Press play and listen with sound on.</p>
+      <div class="testimonial-meta">
+        <span><strong>39 sec</strong> &middot; Vertical video</span>
+        <span><strong>Model session</strong> &middot; On camera</span>
+      </div>
+      <div><a class="btn solid" href="#contact">Book Your Session</a></div>
+    </div>
+    <div class="testimonial-video reveal">
+      <div class="video-frame">
+        <video controls preload="metadata" playsinline poster="assets/lyah-testimonial-poster.jpg" aria-label="Video testimonial from Lyah after her model session with Rolando Cabanillas">
+          <source src="assets/lyah-testimonial.mp4" type="video/mp4" />
+          Your browser does not support embedded video. <a href="assets/lyah-testimonial.mp4">Watch Lyah&rsquo;s testimonial</a>.
+        </video>
+      </div>
+      <p class="video-cap">Lyah &mdash; model session testimonial</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="no">Contacts</span>
+        <h2 class="contact-big">Let’s capture your <span class="gold-i">special moments</span></h2>
+        <p>Tell me about your event or session — I reply personally, usually the same day. Dates for fashion shows, quinceañeras and weddings book out early, so reach out as soon as you have yours.</p>
+      </div>
+      <div class="contact-cards">
+        <a class="ccard" href="https://www.instagram.com/rolandovisuals" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></span>
+          <span><span class="cl">Instagram</span><br /><span class="cv">@rolandovisuals</span></span>
+        </a>
+        <a class="ccard" href="mailto:Rolandovisuals@gmail.com">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+          <span><span class="cl">Email</span><br /><span class="cv">Rolandovisuals@gmail.com</span></span>
+        </a>
+        <a class="ccard" href="tel:+17542673064">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
+          <span><span class="cl">Phone / Text</span><br /><span class="cv">754-267-3064</span></span>
+        </a>
+        <div class="ccard" style="cursor:default">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+          <span><span class="cl">Based in</span><br /><span class="cv">South Florida · Miami area</span></span>
+        </div>
+      </div>
+    </div>
+    <form class="book reveal" id="bookForm">
+      <h3>Request your date</h3>
+      <p class="sub">Fill this in and it opens a ready-to-send email to me — no account, no fuss.</p>
+      <div class="frow">
+        <div class="field">
+          <label for="fName">Your name</label>
+          <input id="fName" type="text" autocomplete="name" placeholder="Full name" />
+        </div>
+        <div class="field">
+          <label for="fPhone">Phone (optional)</label>
+          <input id="fPhone" type="tel" autocomplete="tel" placeholder="Best number" />
+        </div>
+      </div>
+      <div class="frow">
+        <div class="field">
+          <label for="fType">I’m booking</label>
+          <select id="fType">
+            <option>Fashion / Runway Show</option>
+            <option>Quinceañera</option>
+            <option>Model Portfolio</option>
+            <option>Wedding</option>
+            <option>Portrait Session — Women</option>
+            <option>Portrait Session — Men</option>
+            <option>Children / Family</option>
+            <option>Event / Party</option>
+            <option>Other Event</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fDate">Event / session date</label>
+          <input id="fDate" type="date" />
+        </div>
+      </div>
+      <div class="field">
+        <label for="fMsg">Tell me about it</label>
+        <textarea id="fMsg" placeholder="Venue, hours of coverage, photo, video or both — anything you already know."></textarea>
+      </div>
+      <button type="submit" class="btn solid">Send Booking Request</button>
+      <p class="form-note">Prefer DM? Message <strong>@rolandovisuals</strong> on Instagram.</p>
+    </form>
+  </div>
+  <div class="wrap follow reveal">
+    <h3>Follow my <span class="gold-i">work</span></h3>
+    <p class="fsub">Four portfolios, four sides of the lens — pick the one that matches what you need, and say hello.</p>
+    <div class="follow-grid">
+      <a class="fcard" href="https://www.instagram.com/rolandovisuals" target="_blank" rel="noopener">
+        <span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></span>
+        <span class="fh">@rolandovisuals</span>
+        <span class="fl2">Main account</span>
+        <span class="fd">Fashion, runway and events in Miami — the latest shows, shoots and booking updates.</span>
+      </a>
+      <a class="fcard" href="https://www.instagram.com/rollyphotos" target="_blank" rel="noopener">
+        <span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></span>
+        <span class="fh">@rollyphotos</span>
+        <span class="fl2">Photography</span>
+        <span class="fd">My second professional account — more portraits, sessions and everyday photography work.</span>
+      </a>
+      <a class="fcard" href="https://www.instagram.com/rcpaisajes" target="_blank" rel="noopener">
+        <span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></span>
+        <span class="fh">@rcpaisajes</span>
+        <span class="fl2">Landscapes</span>
+        <span class="fd">Paisajes — the places I travel to, shot for the love of light and land.</span>
+      </a>
+      <a class="fcard" href="https://www.instagram.com/rcfoodphoto" target="_blank" rel="noopener">
+        <span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></span>
+        <span class="fh">@rcfoodphoto</span>
+        <span class="fl2">Food photography</span>
+        <span class="fd">Dishes, restaurants and culinary work — food photographed to be craved.</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="fbrand">Rolando <em>Cabanillas</em></span>
+  <nav>
+    <a href="#home">Home</a><a href="#about">About me</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#contact">Contacts</a>
+  </nav>
+  <div class="fine">
+    <span>© 2026 Rolando Cabanillas Photography &amp; Video · rolandocabanillas.com</span>
+    <span>South Florida · English &amp; Español</span>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <span class="count" id="lbCount"></span>
+  <button class="close" id="lbClose" aria-label="Close viewer">✕</button>
+  <button class="prev" id="lbPrev" aria-label="Previous photo">‹</button>
+  <img id="lbImg" alt="" />
+  <button class="next" id="lbNext" aria-label="Next photo">›</button>
+  <div class="lb-cap"><div class="c" id="lbCap"></div><div class="t" id="lbTitle"></div></div>
+</div>
+
+<script>
+(function(){
+  // Mobile menu
+  var burger=document.getElementById('burger'), links=document.getElementById('navLinks');
+  burger.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+  });
+  links.addEventListener('click',function(e){ if(e.target.tagName==='A'){ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }});
+
+  // Full collection — 198 photographs rendered from data, plus 6 hand-placed features (204 total)
+  var PHOTOS=[{"f": "ev01.jpg", "c": "events", "t": "By the Birthday Cake", "cp": "Events & Parties \u2014 Birthdays", "s": "tall"}, {"f": "ev02.jpg", "c": "events", "t": "Birthday Balloons", "cp": "Events & Parties \u2014 Birthdays", "s": "tall"}, {"f": "ev03.jpg", "c": "events", "t": "Family Birthday Party", "cp": "Events & Parties \u2014 Birthdays", "s": "tall"}, {"f": "ev04.jpg", "c": "events", "t": "Birthday Celebration", "cp": "Events & Parties \u2014 Birthdays", "s": "tall"}, {"f": "ev05.jpg", "c": "events", "t": "55th Birthday Celebration", "cp": "Events & Parties \u2014 Birthdays", "s": "tall"}, {"f": "ev06.jpg", "c": "events", "t": "Kids' Birthday Party", "cp": "Events & Parties \u2014 Birthdays", "s": "wide"}, {"f": "ev07.jpg", "c": "events", "t": "Baby Shower", "cp": "Events & Parties \u2014 Baby Showers", "s": "wide"}, {"f": "ev08.jpg", "c": "events", "t": "Baby Shower", "cp": "Events & Parties \u2014 Baby Showers", "s": "tall"}, {"f": "ev09.jpg", "c": "events", "t": "Baby Shower Celebration", "cp": "Events & Parties \u2014 Baby Showers", "s": "wide"}, {"f": "ev10.jpg", "c": "events", "t": "Baby Shower", "cp": "Events & Parties \u2014 Baby Showers", "s": "wide"}, {"f": "ev11.jpg", "c": "events", "t": "Party Gathering", "cp": "Events & Parties", "s": "wide"}, {"f": "ev12.jpg", "c": "events", "t": "Baby Shower", "cp": "Events & Parties \u2014 Baby Showers", "s": "wide"}, {"f": "ev13.jpg", "c": "events", "t": "Party Gathering", "cp": "Events & Parties", "s": "wide"}, {"f": "ev14.jpg", "c": "events", "t": "Party Gathering", "cp": "Events & Parties", "s": "wide"}, {"f": "ev15.jpg", "c": "events", "t": "Baby Shower", "cp": "Events & Parties \u2014 Baby Showers", "s": "wide"}, {"f": "ev16.jpg", "c": "events", "t": "Party Gathering", "cp": "Events & Parties", "s": "wide"}, {"f": "ev17.jpg", "c": "events", "t": "Baby Shower", "cp": "Events & Parties \u2014 Baby Showers", "s": "wide"}, {"f": "ev18.jpg", "c": "events", "t": "Baby Shower", "cp": "Events & Parties \u2014 Baby Showers", "s": "wide"}, {"f": "ev19.jpg", "c": "events", "t": "Baby Shower", "cp": "Events & Parties \u2014 Baby Showers", "s": "wide"}, {"f": "ev20.jpg", "c": "events", "t": "Party Gathering", "cp": "Events & Parties", "s": "wide"}, {"f": "ev21.jpg", "c": "events", "t": "Family Celebration", "cp": "Events & Parties", "s": "wide"}, {"f": "ev22.jpg", "c": "events", "t": "Party Gathering", "cp": "Events & Parties", "s": "wide"}, {"f": "ev23.jpg", "c": "events", "t": "Family Birthday Party", "cp": "Events & Parties \u2014 Birthdays", "s": ""}, {"f": "ev25.jpg", "c": "events", "t": "Family Birthday Party", "cp": "Events & Parties \u2014 Birthdays", "s": "wide"}, {"f": "DSC_7438.webp", "c": "quince", "t": "Quincea\u00f1era in Blue", "cp": "Quincea\u00f1eras", "s": "tall"}, {"f": "DSC_7439.webp", "c": "quince", "t": "The Archway", "cp": "Quincea\u00f1eras", "s": "tall"}, {"f": "DSC_7450.webp", "c": "quince", "t": "Quincea\u00f1era in Blue", "cp": "Quincea\u00f1eras", "s": "tall"}, {"f": "DSC_7459.webp", "c": "quince", "t": "Her Crown", "cp": "Quincea\u00f1eras", "s": "tall"}, {"f": "DSC_7506.webp", "c": "quince", "t": "Quincea\u00f1era in Pink", "cp": "Quincea\u00f1eras", "s": "tall"}, {"f": "DSC_7510.webp", "c": "quince", "t": "Blush & Stone", "cp": "Quincea\u00f1eras", "s": "tall"}, {"f": "Z72_4512.webp", "c": "fashion", "t": "Gold on the Runway", "cp": "Quincea\u00f1eras \u2014 Fashion Week", "s": "tall"}, {"f": "Z72_4533.webp", "c": "fashion", "t": "Teal Tulle", "cp": "Quincea\u00f1eras \u2014 Fashion Week", "s": "tall"}, {"f": "Z72_4559.webp", "c": "fashion", "t": "Royal Blue", "cp": "Quincea\u00f1eras \u2014 Fashion Week", "s": "tall"}, {"f": "Z72_4583.webp", "c": "fashion", "t": "Aqua Dream", "cp": "Quincea\u00f1eras \u2014 Fashion Week", "s": "tall"}, {"f": "Z72_4604.webp", "c": "fashion", "t": "Aqua Dream II", "cp": "Quincea\u00f1eras \u2014 Fashion Week", "s": "tall"}, {"f": "Z72_4618.webp", "c": "fashion", "t": "Fuchsia Night", "cp": "Quincea\u00f1eras \u2014 Fashion Week", "s": "tall"}, {"f": "Z72_4650.webp", "c": "fashion", "t": "Sky Blue", "cp": "Quincea\u00f1eras \u2014 Fashion Week", "s": "tall"}, {"f": "Z72_4677.webp", "c": "fashion", "t": "Scarlet Gown", "cp": "Quincea\u00f1eras \u2014 Fashion Week", "s": "tall"}, {"f": "Z72_4712.webp", "c": "fashion", "t": "Periwinkle", "cp": "Quincea\u00f1eras \u2014 Fashion Week", "s": "tall"}, {"f": "Z72_4734.webp", "c": "fashion", "t": "Mauve Sparkle", "cp": "Quincea\u00f1eras \u2014 Fashion Week", "s": "tall"}, {"f": "Z72_4763.webp", "c": "fashion", "t": "Midnight Gown", "cp": "Quincea\u00f1eras \u2014 Fashion Week", "s": "tall"}, {"f": "Untitled-1.webp", "c": "men", "t": "Behind the Camera", "cp": "Men \u2014 Portraits", "s": ""}, {"f": "Z62_9324.webp", "c": "women", "t": "Helipad Love", "cp": "Portraits \u2014 Couples", "s": "wide"}, {"f": "Z62_9329.webp", "c": "women", "t": "City Heights", "cp": "Portraits \u2014 Couples", "s": "wide"}, {"f": "Z62_9331.webp", "c": "women", "t": "Red Dress, Red Chopper", "cp": "Portraits \u2014 Couples", "s": "wide"}, {"f": "Z62_9343.webp", "c": "women", "t": "The Two of Us", "cp": "Portraits \u2014 Couples", "s": "wide"}, {"f": "Z62_9373.webp", "c": "men", "t": "The Gentleman", "cp": "Men \u2014 Portraits", "s": "tall"}, {"f": "Z62_9375.webp", "c": "men", "t": "The Gentleman", "cp": "Men \u2014 Portraits", "s": "wide"}, {"f": "Z62_9467.webp", "c": "women", "t": "The Arrival", "cp": "Portraits \u2014 Couples", "s": "wide"}, {"f": "DSC_5499.webp", "c": "weddings", "t": "The Details", "cp": "Weddings \u2014 Details", "s": "tall"}, {"f": "DSC_5500.webp", "c": "weddings", "t": "Something Blue", "cp": "Weddings \u2014 Details", "s": "tall"}, {"f": "DSC_5501.webp", "c": "weddings", "t": "Rings & Cufflinks", "cp": "Weddings \u2014 Details", "s": "tall"}, {"f": "DSC_5502.webp", "c": "weddings", "t": "Red Soles", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_5503.webp", "c": "weddings", "t": "Finishing Touches", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_5504.webp", "c": "weddings", "t": "Before the Ceremony", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_5505.webp", "c": "weddings", "t": "The Dresser", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_5506.webp", "c": "weddings", "t": "Petals & Promises", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_5507.webp", "c": "weddings", "t": "The Details", "cp": "Weddings \u2014 Details", "s": "tall"}, {"f": "DSC_5508.webp", "c": "weddings", "t": "Something Blue", "cp": "Weddings \u2014 Details", "s": "tall"}, {"f": "DSC_5509.webp", "c": "weddings", "t": "Rings & Cufflinks", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_5510.webp", "c": "weddings", "t": "Red Soles", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_5511.webp", "c": "weddings", "t": "Finishing Touches", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_5512.webp", "c": "weddings", "t": "Before the Ceremony", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_5513.webp", "c": "weddings", "t": "The Dresser", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_5516.webp", "c": "weddings", "t": "Petals & Promises", "cp": "Weddings \u2014 Details", "s": "tall"}, {"f": "DSC_5517.webp", "c": "weddings", "t": "The Details", "cp": "Weddings \u2014 Details", "s": "tall"}, {"f": "DSC_5523.webp", "c": "weddings", "t": "Something Blue", "cp": "Weddings \u2014 Details", "s": "tall"}, {"f": "DSC_5525.webp", "c": "weddings", "t": "Rings & Cufflinks", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_5527.webp", "c": "weddings", "t": "Red Soles", "cp": "Weddings \u2014 Details", "s": "tall"}, {"f": "DSC_5531.webp", "c": "weddings", "t": "Finishing Touches", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_5554.webp", "c": "weddings", "t": "Before the Ceremony", "cp": "Weddings \u2014 Details", "s": "tall"}, {"f": "DSC_5555.webp", "c": "weddings", "t": "The Dresser", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_5556.webp", "c": "weddings", "t": "Petals & Promises", "cp": "Weddings \u2014 Details", "s": "tall"}, {"f": "DSC_5560.webp", "c": "weddings", "t": "The Details", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_5573.webp", "c": "weddings", "t": "The Groom & His Man", "cp": "Weddings \u2014 Getting Ready", "s": "tall"}, {"f": "DSC_5590.webp", "c": "weddings", "t": "Plated & Ready", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_5601.webp", "c": "weddings", "t": "The Flower Girl", "cp": "Weddings", "s": "tall"}, {"f": "DSC_5653.webp", "c": "weddings", "t": "Lighting the Unity Candle", "cp": "Weddings", "s": "wide"}, {"f": "DSC_5664.webp", "c": "weddings", "t": "The Vows", "cp": "Weddings", "s": "wide"}, {"f": "DSC_5670.webp", "c": "weddings", "t": "I Do", "cp": "Weddings", "s": "tall"}, {"f": "DSC_5672.webp", "c": "weddings", "t": "First Kiss", "cp": "Weddings", "s": "tall"}, {"f": "DSC_5675.webp", "c": "weddings", "t": "Hand in Hand", "cp": "Weddings", "s": "tall"}, {"f": "DSC_5680.webp", "c": "weddings", "t": "The Exchange", "cp": "Weddings", "s": "wide"}, {"f": "DSC_5685.webp", "c": "weddings", "t": "At the Altar", "cp": "Weddings", "s": "wide"}, {"f": "DSC_5686.webp", "c": "weddings", "t": "The Ceremony", "cp": "Weddings", "s": "wide"}, {"f": "DSC_5688.webp", "c": "weddings", "t": "First Kiss", "cp": "Weddings", "s": "wide"}, {"f": "DSC_5695.webp", "c": "weddings", "t": "Hand in Hand", "cp": "Weddings", "s": "wide"}, {"f": "DSC_5702.webp", "c": "weddings", "t": "The Exchange", "cp": "Weddings", "s": "wide"}, {"f": "DSC_5705.webp", "c": "weddings", "t": "At the Altar", "cp": "Weddings", "s": "wide"}, {"f": "DSC_5716.webp", "c": "weddings", "t": "Just Married", "cp": "Weddings", "s": "tall"}, {"f": "DSC_5721.webp", "c": "weddings", "t": "Just Married", "cp": "Weddings", "s": "wide"}, {"f": "DSC_5723.webp", "c": "weddings", "t": "The Vows", "cp": "Weddings", "s": "wide"}, {"f": "DSC_5726.webp", "c": "weddings", "t": "I Do", "cp": "Weddings", "s": "wide"}, {"f": "DSC_5734.webp", "c": "weddings", "t": "The Ceremony", "cp": "Weddings", "s": "wide"}, {"f": "DSC_5740.webp", "c": "weddings", "t": "First Kiss", "cp": "Weddings", "s": "wide"}, {"f": "DSC_5767.webp", "c": "weddings", "t": "The Wedding Party", "cp": "Weddings", "s": "wide"}, {"f": "DSC_5791.webp", "c": "weddings", "t": "Hand in Hand", "cp": "Weddings", "s": "tall"}, {"f": "DSC_5805.webp", "c": "weddings", "t": "The Exchange", "cp": "Weddings", "s": "tall"}, {"f": "DSC_5819.webp", "c": "weddings", "t": "At the Altar", "cp": "Weddings", "s": "wide"}, {"f": "DSC_5827.webp", "c": "weddings", "t": "The Groomsmen", "cp": "Weddings", "s": "wide"}, {"f": "DSC_5855.webp", "c": "weddings", "t": "Just Married", "cp": "Weddings", "s": "tall"}, {"f": "DSC_5909.webp", "c": "weddings", "t": "The Celebration", "cp": "Weddings \u2014 Reception", "s": "wide"}, {"f": "DSC_8083.webp", "c": "weddings", "t": "Something Blue", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_8084.webp", "c": "weddings", "t": "Rings & Cufflinks", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_8087.webp", "c": "weddings", "t": "Red Soles", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_8089.webp", "c": "weddings", "t": "Finishing Touches", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_8090.webp", "c": "weddings", "t": "Before the Ceremony", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_8094.webp", "c": "weddings", "t": "Signing the Guest Book", "cp": "Weddings", "s": "tall"}, {"f": "DSC_8098.webp", "c": "weddings", "t": "The Dresser", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_8105.webp", "c": "weddings", "t": "Petals & Promises", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_8111.webp", "c": "weddings", "t": "Getting Ready", "cp": "Weddings \u2014 Getting Ready", "s": "wide"}, {"f": "DSC_8116.webp", "c": "weddings", "t": "Final Touches", "cp": "Weddings \u2014 Getting Ready", "s": "wide"}, {"f": "DSC_8132.webp", "c": "weddings", "t": "The Groom", "cp": "Weddings \u2014 Getting Ready", "s": "tall"}, {"f": "DSC_8141.webp", "c": "weddings", "t": "Mother & Daughter", "cp": "Weddings \u2014 Getting Ready", "s": "tall"}, {"f": "DSC_8145.webp", "c": "weddings", "t": "The Bride", "cp": "Weddings \u2014 Getting Ready", "s": "tall"}, {"f": "DSC_8149.webp", "c": "weddings", "t": "Getting Ready", "cp": "Weddings \u2014 Getting Ready", "s": "tall"}, {"f": "DSC_8157.webp", "c": "weddings", "t": "The Vows", "cp": "Weddings", "s": "tall"}, {"f": "DSC_8159.webp", "c": "weddings", "t": "Final Touches", "cp": "Weddings \u2014 Getting Ready", "s": "wide"}, {"f": "DSC_8162.webp", "c": "weddings", "t": "The Groom", "cp": "Weddings \u2014 Getting Ready", "s": "tall"}, {"f": "DSC_8165.webp", "c": "weddings", "t": "The Details", "cp": "Weddings \u2014 Details", "s": "wide"}, {"f": "DSC_8177.webp", "c": "weddings", "t": "I Do", "cp": "Weddings", "s": "wide"}, {"f": "DSC_8178.webp", "c": "weddings", "t": "The Ceremony", "cp": "Weddings", "s": "wide"}, {"f": "DSC_9720.webp", "c": "weddings", "t": "Her Sign Said 25", "cp": "Weddings \u2014 Vow Renewal", "s": "wide"}, {"f": "DSC_9729.webp", "c": "weddings", "t": "Ring Bearer & Flower Girl", "cp": "Weddings \u2014 Vow Renewal", "s": "wide"}, {"f": "DSC_9732.webp", "c": "weddings", "t": "Ring Bearer & Flower Girl", "cp": "Weddings \u2014 Vow Renewal", "s": "wide"}, {"f": "DSC_9734.webp", "c": "weddings", "t": "Down the Aisle", "cp": "Weddings \u2014 Vow Renewal", "s": "wide"}, {"f": "DSC_9736.webp", "c": "weddings", "t": "Her Sign Said 25", "cp": "Weddings \u2014 Vow Renewal", "s": "tall"}, {"f": "DSC_9748.webp", "c": "weddings", "t": "25 Years Together", "cp": "Weddings \u2014 Vow Renewal", "s": "wide"}, {"f": "DSC_9752.webp", "c": "weddings", "t": "The Ring Bearer", "cp": "Weddings \u2014 Vow Renewal", "s": "wide"}, {"f": "DSC_9754.webp", "c": "weddings", "t": "The Vow Renewal", "cp": "Weddings \u2014 Vow Renewal", "s": "wide"}, {"f": "DSC_9769.webp", "c": "weddings", "t": "Down the Aisle", "cp": "Weddings \u2014 Vow Renewal", "s": "wide"}, {"f": "DSC_9782.webp", "c": "weddings", "t": "Still Saying I Do", "cp": "Weddings \u2014 Vow Renewal", "s": "wide"}, {"f": "DSC_9791.webp", "c": "weddings", "t": "Silver Anniversary", "cp": "Weddings \u2014 Vow Renewal", "s": "wide"}, {"f": "DSC_9793.webp", "c": "weddings", "t": "25 Years Together", "cp": "Weddings \u2014 Vow Renewal", "s": "wide"}, {"f": "01_DSC6071.webp", "c": "weddings", "t": "Before the Vows", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC5495-Edit.webp", "c": "weddings", "t": "Vows by the Sea", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC5505.webp", "c": "weddings", "t": "Beach Wedding", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC5515.webp", "c": "weddings", "t": "Sand & Promises", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC5516.webp", "c": "weddings", "t": "The Ring Exchange", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC5550.webp", "c": "weddings", "t": "Sealed with a Kiss", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC5554.webp", "c": "weddings", "t": "Barefoot Bride", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC6096.webp", "c": "weddings", "t": "Vows by the Sea", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC6097.webp", "c": "weddings", "t": "Beach Wedding", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC6098.webp", "c": "weddings", "t": "Sand & Promises", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC6103.webp", "c": "weddings", "t": "The Ring Exchange", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC6104.webp", "c": "weddings", "t": "Sealed with a Kiss", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC6131.webp", "c": "weddings", "t": "Barefoot Bride", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC6138.webp", "c": "weddings", "t": "Vows by the Sea", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC6147.webp", "c": "weddings", "t": "Beach Wedding", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC6149.webp", "c": "weddings", "t": "Sand & Promises", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC6172.webp", "c": "weddings", "t": "The Ring Exchange", "cp": "Weddings \u2014 Beach Ceremony", "s": "tall"}, {"f": "_DSC6174.webp", "c": "weddings", "t": "Sealed with a Kiss", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC6176.webp", "c": "weddings", "t": "Barefoot Bride", "cp": "Weddings \u2014 Beach Ceremony", "s": "tall"}, {"f": "_DSC6177.webp", "c": "weddings", "t": "Vows by the Sea", "cp": "Weddings \u2014 Beach Ceremony", "s": "tall"}, {"f": "_DSC6178.webp", "c": "weddings", "t": "Beach Wedding", "cp": "Weddings \u2014 Beach Ceremony", "s": "tall"}, {"f": "_DSC6183.webp", "c": "weddings", "t": "Sand & Promises", "cp": "Weddings \u2014 Beach Ceremony", "s": "tall"}, {"f": "_DSC6185.webp", "c": "weddings", "t": "The Ring Exchange", "cp": "Weddings \u2014 Beach Ceremony", "s": "tall"}, {"f": "_DSC6191.webp", "c": "weddings", "t": "Sealed with a Kiss", "cp": "Weddings \u2014 Beach Ceremony", "s": "tall"}, {"f": "_DSC6195-Edit.webp", "c": "weddings", "t": "Barefoot Bride", "cp": "Weddings \u2014 Beach Ceremony", "s": "tall"}, {"f": "_DSC6216.webp", "c": "weddings", "t": "Vows by the Sea", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC6217.webp", "c": "weddings", "t": "Beach Wedding", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC6219.webp", "c": "weddings", "t": "Sand & Promises", "cp": "Weddings \u2014 Beach Ceremony", "s": "tall"}, {"f": "_DSC6220.webp", "c": "weddings", "t": "The Ring Exchange", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC6221.webp", "c": "weddings", "t": "Sealed with a Kiss", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC6222.webp", "c": "weddings", "t": "Barefoot Bride", "cp": "Weddings \u2014 Beach Ceremony", "s": "wide"}, {"f": "_DSC6223.webp", "c": "weddings", "t": "Vows by the Sea", "cp": "Weddings \u2014 Beach Ceremony", "s": "tall"}, {"f": "_DSC6224.webp", "c": "weddings", "t": "Beach Wedding", "cp": "Weddings \u2014 Beach Ceremony", "s": "tall"}, {"f": "_DSC6225.webp", "c": "weddings", "t": "Sand & Promises", "cp": "Weddings \u2014 Beach Ceremony", "s": "tall"}, {"f": "01_DSC7351.webp", "c": "weddings", "t": "Sunset Vows", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "01_DSC7353.webp", "c": "weddings", "t": "Golden Hour", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "IMG_4878.webp", "c": "weddings", "t": "By the Water", "cp": "Weddings \u2014 Sunset Ceremony", "s": "tall"}, {"f": "IMG_4881.webp", "c": "weddings", "t": "The Ceremony", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7262.webp", "c": "weddings", "t": "The Kiss", "cp": "Weddings \u2014 Sunset Ceremony", "s": ""}, {"f": "_DSC7263.webp", "c": "weddings", "t": "Sunset Vows", "cp": "Weddings \u2014 Sunset Ceremony", "s": ""}, {"f": "_DSC7317.webp", "c": "weddings", "t": "Golden Hour", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7319.webp", "c": "weddings", "t": "By the Water", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7320.webp", "c": "weddings", "t": "The Ceremony", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7325.webp", "c": "weddings", "t": "The Kiss", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7326.webp", "c": "weddings", "t": "Sunset Vows", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7327.webp", "c": "weddings", "t": "Golden Hour", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7330.webp", "c": "weddings", "t": "By the Water", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7333.webp", "c": "weddings", "t": "The Ceremony", "cp": "Weddings \u2014 Sunset Ceremony", "s": "tall"}, {"f": "_DSC7334.webp", "c": "weddings", "t": "The Kiss", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7335.webp", "c": "weddings", "t": "Sunset Vows", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7336.webp", "c": "weddings", "t": "Golden Hour", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7337.webp", "c": "weddings", "t": "By the Water", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7340.webp", "c": "weddings", "t": "The Ceremony", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7350.webp", "c": "weddings", "t": "The Kiss", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7353.webp", "c": "weddings", "t": "Sunset Vows", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7354.webp", "c": "weddings", "t": "Golden Hour", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7355.webp", "c": "weddings", "t": "By the Water", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7356.webp", "c": "weddings", "t": "The Ceremony", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7357.webp", "c": "weddings", "t": "The Kiss", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7369.webp", "c": "weddings", "t": "Sunset Vows", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7372.webp", "c": "weddings", "t": "Golden Hour", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7401.webp", "c": "weddings", "t": "By the Water", "cp": "Weddings \u2014 Sunset Ceremony", "s": "wide"}, {"f": "_DSC7405.webp", "c": "weddings", "t": "The Ceremony", "cp": "Weddings \u2014 Sunset Ceremony", "s": "tall"}, {"f": "_DSC7406.webp", "c": "weddings", "t": "The Kiss", "cp": "Weddings \u2014 Sunset Ceremony", "s": "tall"}];
+  var gridEl=document.getElementById('grid');
+  var archiveGridEl=document.getElementById('archiveGrid');
+
+  // The 6 hand-placed feature photographs — they open the showcase in the
+  // static HTML above, and they are also part of the full archive.
+  var FEATURED=[
+    {"f":"quince-blue.jpg","c":"quince","t":"Quinceañera in Blue","cp":"Quinceañeras","s":"tall","full":1},
+    {"f":"women-red.jpg","c":"women","t":"Scarlet","cp":"Women — Portraits","s":"tall","full":1},
+    {"f":"wedding-bench.jpg","c":"weddings","t":"The Bench","cp":"Weddings","s":"wide","full":1},
+    {"f":"wedding-proposal.jpg","c":"weddings","t":"She Said Yes","cp":"Weddings — Engagements","s":"tall","full":1},
+    {"f":"wedding-letters.jpg","c":"weddings","t":"A & J","cp":"Weddings — Engagements","s":"wide","full":1},
+    {"f":"women-event.jpg","c":"women","t":"The Gathering","cp":"Women — Events","s":"wide","full":1}
+  ];
+
+  // Curated showcase — the strongest frames only. With the 6 features above
+  // the showcase totals 59 photographs; everything else lives in the archive.
+  var SHOWCASE={
+    // Fashion & Runway — all 11
+    "Z72_4512.webp":1,"Z72_4533.webp":1,"Z72_4559.webp":1,"Z72_4583.webp":1,"Z72_4604.webp":1,"Z72_4618.webp":1,"Z72_4650.webp":1,"Z72_4677.webp":1,"Z72_4712.webp":1,"Z72_4734.webp":1,"Z72_4763.webp":1,
+    // Children & Quinceañeras — all 6
+    "DSC_7438.webp":1,"DSC_7439.webp":1,"DSC_7450.webp":1,"DSC_7459.webp":1,"DSC_7506.webp":1,"DSC_7510.webp":1,
+    // Women — all 5
+    "Z62_9324.webp":1,"Z62_9329.webp":1,"Z62_9331.webp":1,"Z62_9343.webp":1,"Z62_9467.webp":1,
+    // Men — all 3
+    "Untitled-1.webp":1,"Z62_9373.webp":1,"Z62_9375.webp":1,
+    // Weddings — 21 spanning details, getting ready, the ceremony, the reception,
+    // a vow renewal, a beach ceremony and a sunset ceremony
+    "DSC_5499.webp":1,"DSC_5502.webp":1,"DSC_5855.webp":1,"DSC_5573.webp":1,"DSC_5601.webp":1,"DSC_5653.webp":1,"DSC_5672.webp":1,"DSC_5716.webp":1,"DSC_5767.webp":1,"DSC_5909.webp":1,"DSC_8094.webp":1,"DSC_8132.webp":1,"DSC_8141.webp":1,"DSC_8145.webp":1,"DSC_9720.webp":1,"DSC_9782.webp":1,"_DSC5495-Edit.webp":1,"_DSC5550.webp":1,"_DSC6172.webp":1,"01_DSC7351.webp":1,"IMG_4878.webp":1,
+    // Events & Parties — 7: birthdays, baby showers and family celebrations
+    "ev01.jpg":1,"ev03.jpg":1,"ev05.jpg":1,"ev06.jpg":1,"ev07.jpg":1,"ev09.jpg":1,"ev21.jpg":1
+  };
+
+  // ---- Painting-safe grid loading ----
+  // A cell starts as a warm gold "waiting" surface (the CSS ::before sweep);
+  // its photo fades in only when the load event proves the pixels arrived.
+  // EVERY thumbnail load is started unconditionally — the first EAGER_FIRST
+  // of each grid at once, the rest through a fast ordered drip (a handful
+  // every 50 ms, so a whole grid is under way within a second or two).
+  // No IntersectionObserver gate: an observer can leave a cell unstarted
+  // indefinitely (fast scroll, anchor jump, full-page capture, webview
+  // pre-render) and an unstarted cell is exactly the black box this page
+  // must never show. No native lazy loading either, and no thundering
+  // herd: the drip keeps requests ordered without 200 competing at once.
+  var EAGER_FIRST=12;
+  function startLoad(im,url){
+    if(im._started||!url) return;
+    im._started=true;
+    var tries=0;
+    function done(){ im.classList.add('loaded'); }
+    function retry(){
+      if(tries<3){ tries++; setTimeout(function(){ im.src=url; },500*tries); }
+    }
+    im.addEventListener('load',done);
+    im.addEventListener('error',retry);
+    im.src=url;
+    // If this image settled (from cache) before the listeners attached,
+    // reconcile right away instead of waiting for an event that already
+    // fired — fade it in if its pixels are here, retry it if it failed.
+    if(im.complete){
+      if(im.naturalWidth>0) done();
+      else retry();
+    }
+  }
+  // Ordered drip: queued thumbnails start a few at a time, in grid order,
+  // whether or not their cell is anywhere near the viewport. The queue
+  // always drains, so no cell can be stranded waiting for a scroll event
+  // that may never come.
+  var dripQueue=[], dripTimer=null;
+  function drip(){
+    if(dripTimer) return;
+    dripTimer=setInterval(function(){
+      var batch=dripQueue.splice(0,6);
+      batch.forEach(function(job){ startLoad(job.im,job.url); });
+      if(!dripQueue.length){ clearInterval(dripTimer); dripTimer=null; }
+    },50);
+  }
+  function queueLoad(im,url,eager){
+    im.setAttribute('data-src',url);
+    if(eager) startLoad(im,url);
+    else { dripQueue.push({im:im,url:url}); drip(); }
+  }
+  // Safety sweep: a few hundred ms after a grid is wired (and again when
+  // the archive opens), reconcile every cell image against reality — if
+  // its pixels are in, it must be visible; if it failed, restart it.
+  function sweepLoaded(scope){
+    Array.prototype.forEach.call(scope.querySelectorAll('.gitem img'),function(im){
+      if(im.classList.contains('loaded')) return;
+      if(im.complete&&im.naturalWidth>0){ im.classList.add('loaded'); }
+      else if(im._started&&im.complete&&im.naturalWidth===0){
+        var u=im.getAttribute('data-src')||im.getAttribute('src');
+        if(u) im.src=u;
+      }
+    });
+  }
+  // The hand-placed feature photos already carry their src in the HTML;
+  // they only need the same fade-in-on-load wiring plus the sweep.
+  function bindStatic(im){
+    im._started=true;
+    var tries=0;
+    function done(){ im.classList.add('loaded'); }
+    im.addEventListener('load',done);
+    im.addEventListener('error',function(){
+      if(tries<3){ tries++; setTimeout(function(){ im.src=im.getAttribute('src'); },500*tries); }
+    });
+    if(im.complete&&im.naturalWidth>0) done();
+  }
+
+  function makeItem(p,eager){
+    var b=document.createElement('button');
+    b.type='button';
+    b.className='gitem'+(p.s?(' '+p.s):'');
+    b.setAttribute('data-cat',p.c);
+    b.setAttribute('data-title',p.t);
+    b.setAttribute('data-caption',p.cp);
+    b.setAttribute('data-full','assets/gallery/'+p.f);
+    var im=document.createElement('img');
+    var thumbUrl=p.full?('assets/gallery/'+p.f):('assets/gallery/thumbs/'+p.f);
+    im.alt=p.t+' — '+p.cp+', photograph by Rolando Cabanillas';
+    im.decoding='async';
+    queueLoad(im,thumbUrl,eager);
+    var meta=document.createElement('span');
+    meta.className='meta';
+    var mc=document.createElement('span'); mc.className='c'; mc.textContent=p.cp;
+    var mt=document.createElement('span'); mt.className='t'; mt.textContent=p.t;
+    meta.appendChild(mc); meta.appendChild(mt);
+    b.appendChild(im); b.appendChild(meta);
+    b.addEventListener('click',function(){ openLb(b); });
+    return b;
+  }
+
+  // Showcase: the curated picks join the 6 features already in the grid.
+  // The first EAGER_FIRST thumbnails start immediately and the remaining
+  // 50-odd follow through the drip, so every showcase photo is loading
+  // within the first second — painted long before the visitor scrolls to
+  // it, and never stranded unstarted below the fold.
+  var showcaseIdx=0;
+  PHOTOS.forEach(function(p){ if(SHOWCASE[p.f]){ gridEl.appendChild(makeItem(p, showcaseIdx<EAGER_FIRST)); showcaseIdx++; } });
+  setTimeout(function(){ sweepLoaded(gridEl); },400);
+  setTimeout(function(){ sweepLoaded(gridEl); },3000);
+
+  // Filters — wired per grid, so showcase and archive filter independently
+  function wireFilters(scopeEl, grid){
+    var btns=Array.prototype.slice.call(scopeEl.querySelectorAll('button[data-filter]'));
+    function apply(f){
+      btns.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-filter')===f); });
+      Array.prototype.forEach.call(grid.querySelectorAll('.gitem'),function(it){
+        var cats=it.getAttribute('data-cat').split(' ');
+        it.classList.toggle('hidden', !(f==='all' || cats.indexOf(f)>-1));
+      });
+    }
+    btns.forEach(function(b){ b.addEventListener('click',function(){ apply(b.getAttribute('data-filter')); }); });
+    return apply;
+  }
+  var showcaseFilter=wireFilters(document.getElementById('showcaseFilters'), gridEl);
+  document.querySelectorAll('[data-filter-link]').forEach(function(a){
+    a.addEventListener('click',function(){ showcaseFilter(a.getAttribute('data-filter-link')); });
+  });
+
+  // Full archive — built on the FIRST click of its toggle, not at page load.
+  // Building 204 eager images inside a hidden container made the browser
+  // deprioritise them behind everything else, so their cells never painted
+  // (the "black box" bug). Built on demand, every one of its thumbnails
+  // starts loading at once (first rows immediately, the rest through the
+  // drip), and the showcase's 59 photos no longer compete with them.
+  var archiveBuilt=false;
+  function buildArchive(){
+    if(archiveBuilt) return;
+    archiveBuilt=true;
+    var archiveIdx=0;
+    FEATURED.concat(PHOTOS).forEach(function(p){ archiveGridEl.appendChild(makeItem(p, archiveIdx<EAGER_FIRST)); archiveIdx++; });
+    wireFilters(document.getElementById('archiveFilters'), archiveGridEl);
+  }
+  var archiveToggle=document.getElementById('archiveToggle'), archiveBody=document.getElementById('archiveBody');
+  archiveToggle.addEventListener('click',function(){
+    var opening=archiveBody.hasAttribute('hidden');
+    if(opening){
+      buildArchive(); archiveBody.removeAttribute('hidden');
+      // Reconcile a few hundred ms after opening: anything that settled
+      // while the grid was being built must be faded in, not left waiting.
+      setTimeout(function(){ sweepLoaded(archiveGridEl); },400);
+      setTimeout(function(){ sweepLoaded(archiveGridEl); },3000);
+    } else { archiveBody.setAttribute('hidden',''); }
+    archiveToggle.setAttribute('aria-expanded', opening?'true':'false');
+    archiveToggle.textContent= opening ? 'Hide the archive' : 'View the full archive — 204 photos';
+  });
+
+  // Lightbox (navigates within the grid the photo was opened from)
+  var lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg'),
+      lbTitle=document.getElementById('lbTitle'), lbCap=document.getElementById('lbCap'), lbCount=document.getElementById('lbCount'),
+      lbList=[], current=0;
+  function showLb(idx){
+    if(!lbList.length) return;
+    current=((idx%lbList.length)+lbList.length)%lbList.length;
+    var it=lbList[current], img=it.querySelector('img');
+    lbImg.src=it.getAttribute('data-full')||img.src; lbImg.alt=img.alt;
+    lbTitle.textContent=it.getAttribute('data-title');
+    lbCap.textContent=it.getAttribute('data-caption');
+    lbCount.textContent=(current+1)+' / '+lbList.length;
+  }
+  function openLb(item){
+    lbList=Array.prototype.filter.call(item.parentNode.querySelectorAll('.gitem'),function(it){ return !it.classList.contains('hidden'); });
+    lb.classList.add('open'); document.body.style.overflow='hidden';
+    showLb(lbList.indexOf(item));
+  }
+  function closeLb(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+  // The 6 showcase features live in the static HTML — point them at their
+  // full-size files and bind them to the lightbox too
+  Array.prototype.forEach.call(gridEl.querySelectorAll('.gitem'),function(it){
+    if(it.getAttribute('data-full')) return; // already bound by makeItem
+    var img=it.querySelector('img');
+    bindStatic(img);
+    it.setAttribute('data-full', img.getAttribute('src'));
+    it.addEventListener('click',function(){ openLb(it); });
+  });
+  document.getElementById('lbClose').addEventListener('click',closeLb);
+  document.getElementById('lbPrev').addEventListener('click',function(){ showLb(current-1); });
+  document.getElementById('lbNext').addEventListener('click',function(){ showLb(current+1); });
+  lb.addEventListener('click',function(e){ if(e.target===lb) closeLb(); });
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') closeLb();
+    if(e.key==='ArrowLeft') showLb(current-1);
+    if(e.key==='ArrowRight') showLb(current+1);
+  });
+
+  // Booking form -> prefilled email
+  document.getElementById('bookForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=document.getElementById('fName').value.trim(),
+        phone=document.getElementById('fPhone').value.trim(),
+        type=document.getElementById('fType').value,
+        date=document.getElementById('fDate').value,
+        msg=document.getElementById('fMsg').value.trim();
+    var lines=['Hi Rolly, I would like to book: '+type+'.',''];
+    if(name) lines.push('Name: '+name);
+    if(phone) lines.push('Phone: '+phone);
+    if(date) lines.push('Date: '+date);
+    if(msg){ lines.push(''); lines.push(msg); }
+    var subject=encodeURIComponent('Booking request — '+type+(date?(' — '+date):''));
+    var body=encodeURIComponent(lines.join('\n'));
+    window.location.href='mailto:Rolandovisuals@gmail.com?subject='+subject+'&body='+body;
+  });
+
+  // Reveal on scroll
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    // Safety: never leave content hidden if the observer does not fire
+    setTimeout(function(){ document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); }); }, 1600);
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>
