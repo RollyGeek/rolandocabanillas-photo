@@ -279,6 +279,12 @@
   .lang-switch a{font-family:var(--sans);background:transparent;border:none;color:var(--ink-dim);font-size:.72rem;letter-spacing:.16em;padding:.52rem .7rem;cursor:pointer;text-decoration:none;transition:color .2s,background .2s}
   .lang-switch a:hover{color:var(--gold-bright)}
   .nav-links a.active{color:var(--gold-bright);border-color:var(--gold)}
+
+  .tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,3vw,2.5rem);align-items:start;margin-top:clamp(2rem,4vw,3rem)}
+  .tst-grid .testimonial-video{width:100%}
+  .tst-grid .video-frame{width:100%;max-width:360px}
+  @media (max-width:1000px){.tst-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:620px){.tst-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -302,12 +308,11 @@
 </header>
 
 <section class="testimonial" id="testimonial">
-  <div class="wrap testimonial-grid">
+  <div class="wrap">
     <div class="testimonial-copy reveal">
       <div class="sec-head" style="margin-bottom:1.2rem">
         <span class="no" data-i18n="tst.no">Testimonial</span>
         <h2 data-i18n-html="tst.h2">What Clients <span class="gold-i">Say</span></h2>
-        <p data-i18n="tst.sub">Lyah shares her experience after her session.</p>
       </div>
       <p data-i18n="tst.p1">Filmed on camera in the dressing room right after her session, Lyah answers the photographer&rsquo;s question about how her session went &mdash; in her own words. The video closes with her hero photo from the shoot.</p>
       <p data-i18n="tst.p2">Press play and listen with sound on.</p>
@@ -317,38 +322,49 @@
       </div>
       <div><a class="btn solid" href="contact.html" data-i18n="tst.btn">Book Your Session</a></div>
     </div>
-    <div class="testimonial-video reveal">
-      <div class="video-frame">
+  </div>
+  <div class="wrap">
+    <div class="tst-grid">
+      <div class="testimonial-video reveal">
+        <div class="video-frame">
         <video controls preload="metadata" playsinline poster="assets/lyah-testimonial-poster.jpg" aria-label="Video testimonial from Lyah after her model session with Rolando Cabanillas" data-i18n-aria="tst.aria">
           <source src="assets/lyah-testimonial.mp4" type="video/mp4" />
           Your browser does not support embedded video. <a href="assets/lyah-testimonial.mp4">Watch Lyah&rsquo;s testimonial</a>.
         </video>
       </div>
-      <p class="video-cap" data-i18n="tst.cap">Lyah &mdash; model session testimonial</p>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="testimonial-video testimonial-video--second reveal">
-      <div class="video-frame">
+        <p class="video-cap" data-i18n="tst.cap">Lyah &mdash; model session testimonial</p>
+        <p class="video-desc" data-i18n="tst.sub">Lyah shares her experience after her session.</p>
+      </div>
+      <div class="testimonial-video reveal">
+        <div class="video-frame">
         <video controls preload="metadata" playsinline poster="assets/rooftop-talking-head-poster.jpg" aria-label="Client testimonial video recorded on camera with Rolando Cabanillas" data-i18n-aria="tst2.aria">
           <source src="assets/rooftop-talking-head.mp4" type="video/mp4" />
           Your browser does not support embedded video. <a href="assets/rooftop-talking-head.mp4">Watch the client testimonial</a>.
         </video>
       </div>
-      <p class="video-cap" data-i18n="tst2.cap">Client Testimonial</p>
-      <p class="video-desc" data-i18n="tst2.desc">Speaking about her experience on camera.</p>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="testimonial-video testimonial-video--second reveal">
-      <div class="video-frame">
+        <p class="video-cap" data-i18n="tst2.cap">Client Testimonial</p>
+        <p class="video-desc" data-i18n="tst2.desc">Speaking about her experience on camera.</p>
+      </div>
+      <div class="testimonial-video reveal">
+        <div class="video-frame">
         <video controls preload="metadata" playsinline poster="assets/car-talking-head-poster.jpg" aria-label="Video testimonial from two clients speaking to camera in a car, filmed by Rolando Cabanillas">
           <source src="assets/car-talking-head.mp4" type="video/mp4" />
           Your browser does not support embedded video. <a href="assets/car-talking-head.mp4">Watch the car chat testimonial</a>.
         </video>
       </div>
-      <p class="video-cap">Client Testimonial — Car Chat</p>
-      <p class="video-desc">Two clients share how their session went — loved it, natural, comfortable, perfect.</p>
+        <p class="video-cap">Client Testimonial — Car Chat</p>
+        <p class="video-desc">Two clients share how their session went — loved it, natural, comfortable, perfect.</p>
+      </div>
+      <div class="testimonial-video reveal">
+        <div class="video-frame">
+        <video controls preload="metadata" playsinline poster="assets/cowboy-session-bts-poster.jpg" aria-label="Client testimonial from the western session, filmed by Rolando Cabanillas">
+          <source src="assets/cowboy-session-bts.mp4" type="video/mp4" />
+          Your browser does not support embedded video. <a href="assets/cowboy-session-bts.mp4">Watch the western session testimonial</a>.
+        </video>
+      </div>
+        <p class="video-cap">Client Testimonial — Western Session</p>
+        <p class="video-desc">Western session testimonial.</p>
+      </div>
     </div>
   </div>
 </section>
